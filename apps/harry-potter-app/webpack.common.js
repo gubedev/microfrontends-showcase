@@ -1,10 +1,8 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const deps = require("./package.json").dependencies;
 const srcPath = "src";
-
-const RICK_AND_MORTY_URL = "http://localhost:3002";
-const HARRY_POTTER_URL = "http://localhost:3003";
 
 module.exports = {
   entry: "./src/index",
@@ -34,17 +32,15 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "host",
+      name: "harry_potter",
+      filename: "remoteEntry.js",
       exposes: {
         "./app": "./src/app",
       },
-      remotes: {
-        rick_and_morty: `rick_and_morty@${RICK_AND_MORTY_URL}/remoteEntry.js`,
-        harry_potter: `harry_potter@${HARRY_POTTER_URL}/remoteEntry.js`,
-      },
       shared: {
-        react: { singleton: true, requiredVersion: "^18.2.0" },
-        "react-dom": { singleton: true, requiredVersion: "^18.2.0" },
+        ...deps,
+        react: { singleton: true, requiredVersion: deps.react },
+        "react-dom": { singleton: true, requiredVersion: deps["react-dom"] },
       },
     }),
     new CleanWebpackPlugin(),

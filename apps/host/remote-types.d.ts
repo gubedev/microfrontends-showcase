@@ -5,3 +5,9 @@ declare module "rick_and_morty/app" {
 
   export default App;
 }
+
+declare module "harry_potter/app" {
+  const App: React.ComponentType;
+
+  export default App;
+}

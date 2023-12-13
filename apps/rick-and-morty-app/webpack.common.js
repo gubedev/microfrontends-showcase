@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const deps = require("./package.json").dependencies;
 const srcPath = "src";
 
 module.exports = {
@@ -37,8 +38,9 @@ module.exports = {
         "./app": "./src/app",
       },
       shared: {
-        react: { singleton: true, requiredVersion: "^18.2.0" },
-        "react-dom": { singleton: true, requiredVersion: "^18.2.0" },
+        ...deps,
+        react: { singleton: true, requiredVersion: deps.react },
+        "react-dom": { singleton: true, requiredVersion: deps["react-dom"] },
       },
     }),
     new CleanWebpackPlugin(),
