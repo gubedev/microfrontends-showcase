@@ -3,8 +3,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const srcPath = "src";
 
-const RICK_AND_MORTY_URL = "http://localhost:3002";
-const HARRY_POTTER_URL = "http://localhost:3003";
+const isProduction = true;
+
+const RICK_AND_MORTY_URL = isProduction
+  ? "http://rick-and-morty-mf.s3-website-us-east-1.amazonaws.com"
+  : "http://localhost:3002";
+const HARRY_POTTER_URL = isProduction
+  ? "http://harry-potter-app.s3-website-us-east-1.amazonaws.com"
+  : "http://localhost:3003";
 
 module.exports = {
   entry: "./src/index",
