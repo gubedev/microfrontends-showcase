@@ -1,5 +1,5 @@
 {
-  "name": "microfrontend-showcase",
+  "name": "microfrontends-showcase",
   "private": true,
   "workspaces": [
     "apps/*",
