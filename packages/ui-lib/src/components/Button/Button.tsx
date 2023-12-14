@@ -9,6 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   secondary?: boolean;
   large?: boolean;
   hover?: boolean;
+  selected?: boolean;
 }
 
 /**

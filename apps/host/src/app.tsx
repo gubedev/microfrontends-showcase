@@ -1,5 +1,7 @@
 import { AppPlaceholder, AppSwitcher, LangSwitcher } from "components";
 import { EventNotificationFactory } from "event-notification-lib";
+import { StorageServiceFactory } from "storage-lib";
+import { MessageItem, settings } from "core";
 import React from "react";
 import { AppItem, LangItem } from "types";
 
@@ -21,7 +23,10 @@ export default function App() {
   const handleLangSwitch = (lang: LangItem) => {
     setSelectedLang(lang);
     const notification = EventNotificationFactory.build();
-    notification.publish("language-has-changed", { lang });
+    notification.publish(MessageItem.LANGUAGE_HAS_CHANGED, { lang });
+
+    const storage = StorageServiceFactory.build();
+    storage.setValue(settings.langStorageKey, lang);
   };
 
   return (

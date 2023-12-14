@@ -1,6 +1,8 @@
 import { fetchCharactersApi } from "api";
 import { CharacterList } from "character-list";
 import { EventNotificationFactory } from "event-notification-lib";
+import { MessageItem, settings } from "core";
+import { StorageServiceFactory } from "storage-lib";
 import i18n from "i18n";
 import React from "react";
 
@@ -14,11 +16,24 @@ export default function App() {
   };
 
   React.useEffect(() => {
+    const storage = StorageServiceFactory.build();
+    i18n.changeLanguage(
+      storage.getValue(settings.langStorageKey) ?? settings.defaultLang
+    );
+  }, []);
+
+  React.useEffect(() => {
     const notification = EventNotificationFactory.build();
-    notification.subscribe("language-has-changed", handleLangHasChanged);
+    notification.subscribe(
+      MessageItem.LANGUAGE_HAS_CHANGED,
+      handleLangHasChanged
+    );
 
     return () => {
-      notification.unsubscribe("language-has-changed", handleLangHasChanged);
+      notification.unsubscribe(
+        MessageItem.LANGUAGE_HAS_CHANGED,
+        handleLangHasChanged
+      );
     };
   }, [handleLangHasChanged]);
 
