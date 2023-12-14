@@ -1,71 +1,25 @@
-import React, { Suspense } from "react";
-const RickyAndMorty = React.lazy(() => import("rick_and_morty/app"));
-const HarryPotter = React.lazy(() => import("harry_potter/app"));
-
-import { Button } from "ui-lib";
-
-interface ScreenPlaceholderProps {
-  screen: string;
-}
-
-function ScreenPlaceholder({ screen }: ScreenPlaceholderProps) {
-  return (
-    <Suspense fallback={"loading..."}>
-      {screen === "RICKY" && (
-        <>
-          <div>
-            <RickyAndMorty />
-          </div>
-        </>
-      )}
-      {screen === "HARRY" && (
-        <>
-          <div>
-            <HarryPotter />
-          </div>
-        </>
-      )}
-    </Suspense>
-  );
-}
-
-interface ScreenSwitcherProps {
-  onScreenChanged: (screen: string) => void;
-}
-
-function ScreenSwitcher({ onScreenChanged }: ScreenSwitcherProps) {
-  return (
-    <div>
-      <Button
-        onClick={() => {
-          onScreenChanged("RICKY");
-        }}
-      >
-        <Button.Text>Rick and Morty</Button.Text>
-      </Button>
-      <Button
-        onClick={() => {
-          onScreenChanged("HARRY");
-        }}
-      >
-        <Button.Text>Harry Potter</Button.Text>
-      </Button>
-    </div>
-  );
-}
+import { AppPlaceholder, AppSwitcher } from "components";
+import React from "react";
+import { AppItem } from "types";
 
 export default function App() {
-  const [selectedScreen, setSelectedScreen] = React.useState<string>("RICKY");
+  // State to track the currently selected app
+  const [selectedApp, setSelectedApp] = React.useState<AppItem>(
+    AppItem.RICK_AND_MORTY // Initial selected app is set to Rick and Morty
+  );
 
-  const handleScreenSwitch = (screen: string) => {
-    setSelectedScreen(screen);
+  const handleAppSwitch = (app: AppItem) => {
+    setSelectedApp(app);
   };
 
   return (
     <div>
-      <ScreenSwitcher onScreenChanged={handleScreenSwitch} />
+      {/* Render the AppSwitcher component with the handleAppSwitch function as a prop */}
+      <AppSwitcher onAppChange={handleAppSwitch} />
+      {/* Container to display the selected app using the AppPlaceholder component */}
       <div>
-        <ScreenPlaceholder screen={selectedScreen} />
+        {/* Render the AppPlaceholder component with the currently selected app */}
+        <AppPlaceholder app={selectedApp} />
       </div>
     </div>
   );
