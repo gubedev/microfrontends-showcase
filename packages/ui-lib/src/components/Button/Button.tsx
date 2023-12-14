@@ -37,6 +37,7 @@ const Button: ComponentButton = ({
   secondary,
   large,
   hover,
+  selected,
   ...props
 }) => {
   const classNames = [
@@ -44,6 +45,7 @@ const Button: ComponentButton = ({
     secondary && "secondary",
     large && "large",
     hover && "hover",
+    selected && "selected",
   ]
     .filter(Boolean)
     .join(" ");

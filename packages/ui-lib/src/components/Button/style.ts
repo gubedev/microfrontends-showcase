@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface StyledButtonProps {
   secondary?: boolean;
   large?: boolean;
+  selected?: boolean;
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
@@ -24,5 +25,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   &:hover {
     background-color: #0056b3;
+  }
+
+  &.selected {
+    background-color: red;
+    color: white;
   }
 `;

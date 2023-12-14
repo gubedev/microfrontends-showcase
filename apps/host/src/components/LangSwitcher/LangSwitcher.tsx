@@ -13,6 +13,7 @@ interface LangSwitcherProps {
    * @returns {void}
    */
   onLangChange: (Lang: LangItem) => void;
+  initial: LangItem;
 }
 
 /**
@@ -20,22 +21,35 @@ interface LangSwitcherProps {
  * @param {LangSwitcherProps} props - The component props.
  * @returns {JSX.Element} - The rendered component.
  */
-export function LangSwitcher({ onLangChange }: LangSwitcherProps): JSX.Element {
+export function LangSwitcher({
+  onLangChange,
+  initial,
+}: LangSwitcherProps): JSX.Element {
+  // State to track the currently selected lang
+  const [selectedLang, setSelectedLang] = React.useState<LangItem>(initial);
+
+  const handleLangChange = (lang: LangItem) => {
+    onLangChange(lang);
+    setSelectedLang(lang);
+  };
+
   return (
     <div>
       <Button
         onClick={() => {
-          onLangChange(LangItem.EN);
+          handleLangChange(LangItem.EN);
         }}
         data-testid="lang-switcher-en-test-id"
+        selected={selectedLang === LangItem.EN}
       >
         <Button.Text>EN</Button.Text>
       </Button>
       <Button
         onClick={() => {
-          onLangChange(LangItem.ES);
+          handleLangChange(LangItem.ES);
         }}
         data-testid="lang-switcher-es-test-id"
+        selected={selectedLang === LangItem.ES}
       >
         <Button.Text>ES</Button.Text>
       </Button>
