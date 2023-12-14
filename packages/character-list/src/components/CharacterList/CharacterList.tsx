@@ -84,6 +84,9 @@ export function CharacterList({ doFetch }: CharacterListProps): JSX.Element {
               <div>Name</div>
               <div>{character.name}</div>
             </div>
+            <div>
+              <div>{character.image}</div>
+            </div>
             {/* Add an image tag with alt text if applicable */}
           </li>
         ))}

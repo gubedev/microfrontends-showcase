@@ -17,6 +17,7 @@ export async function fetchCharactersApi(page: number): Promise<Character[]> {
     const result = newCharacters.map((c: any) => {
       return {
         name: c.attributes.name,
+        image: c.attributes.image,
       };
     });
 
