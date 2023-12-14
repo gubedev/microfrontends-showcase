@@ -26,7 +26,13 @@ describe("CharacterList component", () => {
   });
 
   it("renders characters correctly", async () => {
-    render(<CharacterList doFetch={fetchCharactersApi} />);
+    render(
+      <CharacterList
+        doFetch={fetchCharactersApi}
+        nameText={""}
+        loadingMessage={""}
+      />
+    );
 
     // Wait for characters to load
     await waitFor(() => {

@@ -14,6 +14,8 @@ export interface Character {
  */
 export interface CharacterListProps {
   doFetch: (page: number) => Promise<Character[]>;
+  nameText: string;
+  loadingMessage: string;
 }
 
 /**
@@ -21,7 +23,11 @@ export interface CharacterListProps {
  * @param {CharacterListProps} props - The component props.
  * @returns {JSX.Element} - The rendered component.
  */
-export function CharacterList({ doFetch }: CharacterListProps): JSX.Element {
+export function CharacterList({
+  doFetch,
+  nameText,
+  loadingMessage,
+}: CharacterListProps): JSX.Element {
   const [characters, setCharacters] = React.useState<Character[]>([]);
   const [page, setPage] = React.useState(1);
   const [loading, setLoading] = React.useState(false);
@@ -81,7 +87,7 @@ export function CharacterList({ doFetch }: CharacterListProps): JSX.Element {
             }}
           >
             <div>
-              <div>Name</div>
+              <div>{nameText}</div>
               <div>{character.name}</div>
             </div>
             <div>
@@ -91,7 +97,7 @@ export function CharacterList({ doFetch }: CharacterListProps): JSX.Element {
           </li>
         ))}
       </ul>
-      {loading && <p>Loading...</p>}
+      {loading && <p>{loadingMessage}...</p>}
     </div>
   );
 }

@@ -12,3 +12,18 @@ export enum AppItem {
    */
   HARRY_POTTER = 1,
 }
+
+/**
+ * Enum representing different supported languages.
+ * @enum {string}
+ */
+export enum LangItem {
+  /**
+   * Represents the lang item for "en".
+   */
+  EN = "en",
+  /**
+   * Represents the lnag item for "es".
+   */
+  ES = "es",
+}
