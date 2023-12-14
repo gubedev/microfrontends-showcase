@@ -1,7 +1,8 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { CharacterList, fetchCharactersApi, Character } from "./CharacterList";
+import { CharacterList, Character } from "character-list";
+import { fetchCharactersApi } from "api";
 
 jest.mock("./CharacterList", () => ({
   ...jest.requireActual("./CharacterList"),
