@@ -13,8 +13,17 @@ export default meta;
 
 export const Primary = () => (
   <List>
-    <List.Item key={1}>Item 1</List.Item>
-    <List.Item key={2}>Item 2</List.Item>
-    <List.Item key={3}>Item 3</List.Item>
+    <List.Item key={1}>
+      <List.Item.Text>Item 1</List.Item.Text>
+      <List.Item.Image src="https://placehold.co/400" alt="Image 1" />
+    </List.Item>
+    <List.Item key={2}>
+      <List.Item.Text>Item 1</List.Item.Text>
+      <List.Item.Image src="https://placehold.co/400" alt="Image 1" />
+    </List.Item>
+    <List.Item key={3}>
+      <List.Item.Text>Item 1</List.Item.Text>
+      <List.Item.Image src="https://placehold.co/400" alt="Image 1" />
+    </List.Item>
   </List>
 );
