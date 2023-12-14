@@ -14,6 +14,7 @@ export default function App() {
 
   return (
     <div>
+      <h1>Microfrontends</h1>
       {/* Render the AppSwitcher component with the handleAppSwitch function as a prop */}
       <AppSwitcher onAppChange={handleAppSwitch} />
       {/* Container to display the selected app using the AppPlaceholder component */}

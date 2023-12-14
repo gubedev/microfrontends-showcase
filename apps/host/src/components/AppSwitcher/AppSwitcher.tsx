@@ -27,6 +27,7 @@ export function AppSwitcher({ onAppChange }: AppSwitcherProps): JSX.Element {
         onClick={() => {
           onAppChange(AppItem.RICK_AND_MORTY);
         }}
+        data-testid="app-switcher-rick-and-porty-test-id"
       >
         <Button.Text>Rick and Morty</Button.Text>
       </Button>
@@ -34,6 +35,7 @@ export function AppSwitcher({ onAppChange }: AppSwitcherProps): JSX.Element {
         onClick={() => {
           onAppChange(AppItem.HARRY_POTTER);
         }}
+        data-testid="app-switcher-harry-potter-test-id"
       >
         <Button.Text>Harry Potter</Button.Text>
       </Button>
