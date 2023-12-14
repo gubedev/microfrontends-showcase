@@ -4,7 +4,7 @@ import { StyledButton } from "./style";
 /**
  * Props for the Button component.
  */
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   secondary?: boolean;
   large?: boolean;
