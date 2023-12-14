@@ -21,21 +21,30 @@ interface AppSwitcherProps {
  * @returns {JSX.Element} - The rendered component.
  */
 export function AppSwitcher({ onAppChange }: AppSwitcherProps): JSX.Element {
+  const currentApp = React.useRef<AppItem>(AppItem.RICK_AND_MORTY);
+
+  const handlAppChange = (app: AppItem) => {
+    currentApp.current = app;
+    onAppChange(app);
+  };
+
   return (
     <div>
       <Button
         onClick={() => {
-          onAppChange(AppItem.RICK_AND_MORTY);
+          handlAppChange(AppItem.RICK_AND_MORTY);
         }}
         data-testid="app-switcher-rick-and-porty-test-id"
+        selected={currentApp.current === AppItem.RICK_AND_MORTY}
       >
         <Button.Text>Rick and Morty</Button.Text>
       </Button>
       <Button
         onClick={() => {
-          onAppChange(AppItem.HARRY_POTTER);
+          handlAppChange(AppItem.HARRY_POTTER);
         }}
         data-testid="app-switcher-harry-potter-test-id"
+        selected={currentApp.current === AppItem.HARRY_POTTER}
       >
         <Button.Text>Harry Potter</Button.Text>
       </Button>
