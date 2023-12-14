@@ -1,3 +1,4 @@
+import { CharacterList, fetchCharactersApi } from "CharacterList";
 import React from "react";
 
 import { useTranslation } from "react-i18next";
@@ -11,5 +12,10 @@ export default function App() {
     };
   }, []);
 
-  return <h1>Rick and Morty {t("started")}</h1>;
+  return (
+    <>
+      <h1>Rick and Morty {t("started")}</h1>;
+      <CharacterList doFetch={fetchCharactersApi} />
+    </>
+  );
 }
