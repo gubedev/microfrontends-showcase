@@ -1,10 +1,9 @@
-import { AppPlaceholder, AppSwitcher, LangSwitcher } from "components";
+import { AppPlaceholder, AppSwitcher, LangSwitcher, Layout } from "components";
 import { EventNotificationFactory } from "event-notification-lib";
 import { StorageServiceFactory } from "storage-lib";
 import { MessageItem, settings } from "core";
 import React from "react";
 import { AppItem, LangItem } from "types";
-import { Layout } from "ui-lib";
 
 export default function App() {
   // State to track the currently selected app
