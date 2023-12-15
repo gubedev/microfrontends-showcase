@@ -1,10 +1,19 @@
 import React from "react";
 import { AppItem } from "types"; // Contains the definition for AppItem
+import { LoadingContainer } from "./style";
 
 // Lazily import the RickyAndMorty
 const RickyAndMorty = React.lazy(() => import("rick_and_morty/app"));
 // Lazily import the HarryPotter
 const HarryPotter = React.lazy(() => import("harry_potter/app"));
+
+function Loading() {
+  return (
+    <LoadingContainer>
+      <h2>🌀 Loading...</h2>
+    </LoadingContainer>
+  );
+}
 
 /**
  * Props for the AppPlaceholder component.
@@ -25,13 +34,7 @@ interface AppPlaceholderProps {
  */
 export function AppPlaceholder({ app }: AppPlaceholderProps): JSX.Element {
   return (
-    <React.Suspense
-      fallback={
-        <>
-          <h2>🌀 Loading...</h2>
-        </>
-      }
-    >
+    <React.Suspense fallback={<Loading />}>
       {app === AppItem.RICK_AND_MORTY && <RickyAndMorty />}
       {app === AppItem.HARRY_POTTER && <HarryPotter />}
     </React.Suspense>
