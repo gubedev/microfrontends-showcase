@@ -1,6 +1,7 @@
 import React from "react";
 import { LangItem } from "types"; // Contains the definition for LangItem
 import { Button } from "ui-lib";
+import { ButtonContainer } from "./style";
 
 /**
  * Props for the LangSwitcher component.
@@ -34,7 +35,7 @@ export function LangSwitcher({
   };
 
   return (
-    <div>
+    <ButtonContainer>
       <Button
         onClick={() => {
           handleLangChange(LangItem.EN);
@@ -53,6 +54,6 @@ export function LangSwitcher({
       >
         <Button.Text>ES</Button.Text>
       </Button>
-    </div>
+    </ButtonContainer>
   );
 }

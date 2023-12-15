@@ -25,7 +25,13 @@ interface AppPlaceholderProps {
  */
 export function AppPlaceholder({ app }: AppPlaceholderProps): JSX.Element {
   return (
-    <React.Suspense fallback={"loading..."}>
+    <React.Suspense
+      fallback={
+        <>
+          <h2>🌀 Loading...</h2>
+        </>
+      }
+    >
       {app === AppItem.RICK_AND_MORTY && <RickyAndMorty />}
       {app === AppItem.HARRY_POTTER && <HarryPotter />}
     </React.Suspense>

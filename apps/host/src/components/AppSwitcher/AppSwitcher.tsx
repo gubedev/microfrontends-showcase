@@ -1,6 +1,7 @@
 import React from "react";
 import { AppItem } from "types"; // Contains the definition for AppItem
 import { Button } from "ui-lib";
+import { ButtonContainer } from "./style";
 
 /**
  * Props for the AppSwitcher component.
@@ -29,7 +30,7 @@ export function AppSwitcher({ onAppChange }: AppSwitcherProps): JSX.Element {
   };
 
   return (
-    <div>
+    <ButtonContainer>
       <Button
         onClick={() => {
           handlAppChange(AppItem.RICK_AND_MORTY);
@@ -48,6 +49,6 @@ export function AppSwitcher({ onAppChange }: AppSwitcherProps): JSX.Element {
       >
         <Button.Text>Harry Potter</Button.Text>
       </Button>
-    </div>
+    </ButtonContainer>
   );
 }
