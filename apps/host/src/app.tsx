@@ -87,9 +87,12 @@ export default function App() {
         onLangChange={handleLangSwitch}
         initial={initialLang}
       />
-      <Container>
-        <AppPlaceholder app={selectedApp} />
-      </Container>
+
+      <main>
+        <Container>
+          <AppPlaceholder app={selectedApp} />
+        </Container>
+      </main>
     </Wrapper>
   );
 }
