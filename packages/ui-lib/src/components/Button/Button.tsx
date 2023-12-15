@@ -4,11 +4,12 @@ import { StyledButton } from "./style";
 /**
  * Props for the Button component.
  */
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   secondary?: boolean;
   large?: boolean;
   hover?: boolean;
+  selected?: boolean;
 }
 
 /**
@@ -36,6 +37,7 @@ const Button: ComponentButton = ({
   secondary,
   large,
   hover,
+  selected,
   ...props
 }) => {
   const classNames = [
@@ -43,6 +45,7 @@ const Button: ComponentButton = ({
     secondary && "secondary",
     large && "large",
     hover && "hover",
+    selected && "selected",
   ]
     .filter(Boolean)
     .join(" ");
@@ -55,7 +58,7 @@ const Button: ComponentButton = ({
 };
 
 const ButtonText: React.FC<ButtonTextProps> = ({ children }) => {
-  return <>{children}</>;
+  return <p>{children}</p>;
 };
 
 Button.Text = ButtonText;

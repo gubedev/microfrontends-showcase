@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const srcPath = "src";
 
-const isProduction = false;
+const isProduction = true;
 
 const RICK_AND_MORTY_URL = isProduction
   ? "http://rick-and-morty-mf.s3-website-us-east-1.amazonaws.com"

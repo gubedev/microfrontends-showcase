@@ -1,5 +1,8 @@
 export default {
   translation: {
-    started: "started! ",
+    title: "Harry Potter Characters",
+    character_name: "name",
+    loading: "Loading...",
+    notAvailableImage: "Not available",
   },
 };

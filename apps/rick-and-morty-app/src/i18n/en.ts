@@ -1,5 +1,8 @@
 export default {
   translation: {
-    started: "started! ",
+    title: "Rick and Morty Characters",
+    character_name: "name of character",
+    loading: "Loading more characters...",
+    notAvailableImage: "Not available",
   },
 };
