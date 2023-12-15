@@ -10,8 +10,6 @@ import {
   ListItemContentPicture,
 } from "ui-lib";
 
-const NOT_AVAILABLE = "https://placehold.co/600x400?text=:-(";
-
 /**
  * Represents a character fetched from the API.
  */
@@ -28,6 +26,7 @@ export interface CharacterListProps {
   doFetch: (page: number) => Promise<Character[]>;
   nameText: string;
   loadingMessage: string;
+  notImageMessage: string;
 }
 
 /**
@@ -39,6 +38,7 @@ export function CharacterList({
   doFetch,
   nameText,
   loadingMessage,
+  notImageMessage,
 }: CharacterListProps): JSX.Element {
   const [characters, setCharacters] = React.useState<Character[]>([]);
   const [page, setPage] = React.useState(1);
@@ -64,12 +64,6 @@ export function CharacterList({
    * Handle the scroll event and load more characters when reaching the end of the page.
    */
   const handleScroll = (): void => {
-    console.log(
-      " scroll ",
-      window.innerHeight + document.documentElement.scrollTop,
-      document.documentElement.offsetHeight
-    );
-
     if (
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
@@ -90,6 +84,8 @@ export function CharacterList({
   React.useEffect(() => {
     fetchCharacters();
   }, [page, doFetch]);
+
+  const NOT_AVAILABLE = `https://placehold.co/600x400?text=${notImageMessage}`;
 
   return (
     <div>

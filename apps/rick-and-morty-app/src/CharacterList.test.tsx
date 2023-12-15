@@ -29,8 +29,9 @@ describe("CharacterList component", () => {
     render(
       <CharacterList
         doFetch={fetchCharactersApi}
-        nameText={""}
-        loadingMessage={""}
+        nameText={"Name"}
+        loadingMessage={"Loading..."}
+        notImageMessage={"Not available"}
       />
     );
 

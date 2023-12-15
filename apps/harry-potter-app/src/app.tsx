@@ -45,6 +45,7 @@ export default function App() {
         doFetch={fetchCharactersApi}
         nameText={`${t("character_name")}`}
         loadingMessage={`${t("loading")}`}
+        notImageMessage={`${t("notAvailableImage")}`}
       />
     </>
   );

@@ -3,5 +3,6 @@ export default {
     title: "Harry Potter Characters",
     character_name: "name",
     loading: "Loading...",
+    notAvailableImage: "Not available",
   },
 };
