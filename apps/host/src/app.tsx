@@ -4,6 +4,7 @@ import { StorageServiceFactory } from "storage-lib";
 import { MessageItem, settings } from "core";
 import React from "react";
 import { AppItem, LangItem } from "types";
+import { Layout } from "ui-lib";
 
 export default function App() {
   // State to track the currently selected app
@@ -39,19 +40,21 @@ export default function App() {
     (getStoreLang() as LangItem) ?? (settings.defaultLang as LangItem);
 
   return (
-    <div>
-      <h1>Microfrontends</h1>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        {/* Render the AppSwitcher component with the handleAppSwitch function as a prop */}
-        <AppSwitcher onAppChange={handleAppSwitch} />
-        {/* Render the LangSwitcher component with the handleLangSwitch function as a prop */}
-        <LangSwitcher onLangChange={handleLangSwitch} initial={initialLang} />
+    <Layout>
+      <div style={{ marginTop: "128px" }}>
+        <h1>Microfrontends</h1>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {/* Render the AppSwitcher component with the handleAppSwitch function as a prop */}
+          <AppSwitcher onAppChange={handleAppSwitch} />
+          {/* Render the LangSwitcher component with the handleLangSwitch function as a prop */}
+          <LangSwitcher onLangChange={handleLangSwitch} initial={initialLang} />
+        </div>
+        {/* Container to display the selected app using the AppPlaceholder component */}
+        <div>
+          {/* Render the AppPlaceholder component with the currently selected app */}
+          <AppPlaceholder app={selectedApp} />
+        </div>
       </div>
-      {/* Container to display the selected app using the AppPlaceholder component */}
-      <div>
-        {/* Render the AppPlaceholder component with the currently selected app */}
-        <AppPlaceholder app={selectedApp} />
-      </div>
-    </div>
+    </Layout>
   );
 }

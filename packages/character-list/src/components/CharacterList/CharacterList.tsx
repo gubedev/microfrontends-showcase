@@ -62,6 +62,12 @@ export function CharacterList({
    * Handle the scroll event and load more characters when reaching the end of the page.
    */
   const handleScroll = (): void => {
+    console.log(
+      " scroll ",
+      window.innerHeight + document.documentElement.scrollTop,
+      document.documentElement.offsetHeight
+    );
+
     if (
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
