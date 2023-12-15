@@ -1,7 +1,8 @@
-Monorepo for Apps/Host Project
+# Micro-Frontends Showcase
+
 This monorepo contains three related projects: apps/host, apps/rick-and-morty-app, and apps/harry-potter-app. Each of these projects is designed to display character data from specific series.
 
-Projects
+# Projects
 1. apps/host
 This project serves as the main host and provides a structure for the secondary projects. It does not have specific functionality to display character data but acts as the main component that aggregates the other two projects.
 
@@ -17,28 +18,33 @@ Both application projects (rick-and-morty-app and harry-potter-app) use common p
 Management Tool: Lerna
 The management of this monorepo is done using the Lerna tool. Lerna is a tool that facilitates the management of JavaScript projects with multiple packages. It allows efficient management of dependencies, versions, and publication.
 
-Monorepo Structure
+# Monorepo Structure
 The structure of the monorepo is as follows:
 
-go
-Copy code
-monorepo-root/
-  |- apps/
-    |- host/
-    |- rick-and-morty-app/
-    |- harry-potter-app/
-  |- packages/
-    |- common-package-1/
-    |- common-package-2/
-  |- lerna.json
-  |- package.json
-  |- README.md
-apps/: Contains the application projects.
-packages/: Contains common packages shared between the applications.
-lerna.json: Lerna configuration for the monorepo.
-package.json: Main configuration file for the monorepo.
-README.md: This file.
-Development Instructions
+
+# Monorepo Root
+
+- `apps/`
+  - `host/`
+  - `rick-and-morty-app/`
+  - `harry-potter-app/`
+
+- `packages/`
+  - `common-package-1/`
+  - `common-package-2/`
+
+- `lerna.json`
+- `package.json`
+- `README.md`
+
+- **apps/:** Contains the application projects.
+- **packages/:** Contains common packages shared between the applications.
+- **lerna.json:** Lerna configuration for the monorepo.
+- **package.json:** Main configuration file for the monorepo.
+- **README.md:** This file.
+
+# Development Instructions
+
 To start development on any of the projects, follow these steps:
 
 Clone this repository: git clone <REPO_URL>
