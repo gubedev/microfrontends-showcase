@@ -30,8 +30,11 @@ The structure of the monorepo is as follows:
   - `harry-potter-app/`
 
 - `packages/`
-  - `common-package-1/`
-  - `common-package-2/`
+  - `character-list/`
+  - `core/`
+  - `event-notification-lib/`
+  - `storage-lib/`
+  - `ui-lib/`
 
 - `lerna.json`
 - `package.json`
