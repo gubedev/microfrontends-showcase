@@ -50,10 +50,23 @@ The structure of the monorepo is as follows:
 
 To start development on any of the projects, follow these steps:
 
-Clone this repository: git clone <REPO_URL>
-Install monorepo dependencies: npm install
-Navigate to the specific project: cd apps/project-name
-Install project dependencies: npm install
-Start the project: npm start
-Contributions
+1. **Clone this repository:**
+   ```bash
+   git clone <REPO_URL>
+
+2. **Install monorepo dependencies:**
+   ```bash
+   npm install
+
+3. **Navigate to the specific project:
+:**
+   ```bash
+   cd apps/project-name
+
+4. **Start the project::
+:**
+   ```bash
+   npm start
+
+# Contributions
 Contributions are welcome! If you wish to contribute to any of the projects or improve common packages, follow the contribution guidelines in each project.
