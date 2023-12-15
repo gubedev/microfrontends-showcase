@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 import React from "react";
 import App from "./app";
 
-// Test to verify that the page loads and displays the "Rick and Morty" button
+// Test to verify that the page loads and displays the "Micro-Frontends" text
 test("loads and displays host", async () => {
   // Rendering the main App component
   render(<App />);
@@ -13,8 +13,8 @@ test("loads and displays host", async () => {
   // Waiting for the component to finish loading any suspended data
   await waitFor(() => {
     /* finish loading suspended data */
-    // Retrieving the element with text "Rick and Morty" and asserting its presence
-    const linkElement = screen.getByText(/Rick and Morty/i);
-    expect(linkElement).toBeInTheDocument();
+    // Retrieving the element with text "Micro-Frontends" and asserting its presence
+    const textElement = screen.getByText(/Micro-Frontends/i);
+    expect(textElement).toBeInTheDocument();
   });
 });
