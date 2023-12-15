@@ -1,6 +1,6 @@
 export default {
   translation: {
-    started: "iniciado!",
+    title: "Personajes Rick and Morty",
     character_name: "nombre de personaje",
     loading: "Cargando personajes...",
   },

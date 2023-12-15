@@ -6,4 +6,5 @@ export * from "./components/ListItemContentInfo";
 export * from "./components/ListItemContentInfoTitle";
 export * from "./components/ListItemContentInfoName";
 export * from "./components/ListItemContentPicture";
+export * from "./components/PageTitle";
 export * from "./theme";

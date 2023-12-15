@@ -11,6 +11,7 @@ export const Nav = styled.nav`
   top: 0px;
   padding: 40px 20px 40px 20px;
   z-index: 5;
+  box-shadow: ${({ theme }) => theme.shadows.elevation2};
 `;
 
 export const NavBarContent = styled.nav`

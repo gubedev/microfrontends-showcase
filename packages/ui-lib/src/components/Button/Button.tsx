@@ -58,7 +58,7 @@ const Button: ComponentButton = ({
 };
 
 const ButtonText: React.FC<ButtonTextProps> = ({ children }) => {
-  return <>{children}</>;
+  return <p>{children}</p>;
 };
 
 Button.Text = ButtonText;

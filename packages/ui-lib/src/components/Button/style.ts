@@ -8,14 +8,21 @@ interface StyledButtonProps {
 
 export const StyledButton = styled.button<StyledButtonProps>`
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
   cursor: pointer;
+  background: ${({ theme }) => theme.colors.brand.light};
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;
+  cursor: pointer;
+  border-radius: 24px;
+
+  p {
+    color: ${({ theme }) => theme.colors.neutrals.c600};
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 
   &.secondary {
-    background-color: #ccc;
+    background-color: ${({ theme }) => theme.colors.brand.light};
     color: #333;
   }
 
@@ -23,12 +30,12 @@ export const StyledButton = styled.button<StyledButtonProps>`
     font-size: 20px;
   }
 
-  &:hover {
-    background-color: #0056b3;
-  }
-
   &.selected {
-    background-color: red;
-    color: white;
+    background: ${({ theme }) => theme.colors.brand.default};
+    p {
+      color: ${({ theme }) => theme.colors.neutrals.c0};
+      font-weight: 600;
+      text-transform: uppercase;
+    }
   }
 `;

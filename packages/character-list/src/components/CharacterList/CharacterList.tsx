@@ -10,6 +10,8 @@ import {
   ListItemContentPicture,
 } from "ui-lib";
 
+const NOT_AVAILABLE = "https://placehold.co/600x400?text=:-(";
+
 /**
  * Represents a character fetched from the API.
  */
@@ -96,7 +98,7 @@ export function CharacterList({
           <ListItem key={character.id}>
             <ListItemContent>
               <ListItemContentPicture
-                src={character.image}
+                src={character.image ?? NOT_AVAILABLE}
                 alt={`Image ${character.name}`}
               />
               <ListItemContentInfo>
