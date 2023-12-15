@@ -1,5 +1,15 @@
 import React from "react";
 
+import {
+  List,
+  ListItem,
+  ListItemContent,
+  ListItemContentInfo,
+  ListItemContentInfoTitle,
+  ListItemContentInfoName,
+  ListItemContentPicture,
+} from "ui-lib";
+
 /**
  * Represents a character fetched from the API.
  */
@@ -75,28 +85,24 @@ export function CharacterList({
 
   return (
     <div>
-      <ul>
+      <List>
         {characters.map((character) => (
-          <li
-            key={character.id}
-            style={{
-              height: "120px",
-              backgroundColor: "yellow",
-              border: "1px solid black",
-              marginBottom: "8px",
-            }}
-          >
-            <div>
-              <div>{nameText}</div>
-              <div>{character.name}</div>
-            </div>
-            <div>
-              <div>{character.image}</div>
-            </div>
-            {/* Add an image tag with alt text if applicable */}
-          </li>
+          <ListItem key={character.id}>
+            <ListItemContent>
+              <ListItemContentPicture
+                src={character.image}
+                alt={`Image ${character.name}`}
+              />
+              <ListItemContentInfo>
+                <ListItemContentInfoTitle>{nameText}</ListItemContentInfoTitle>
+                <ListItemContentInfoName>
+                  {character.name}
+                </ListItemContentInfoName>
+              </ListItemContentInfo>
+            </ListItemContent>
+          </ListItem>
         ))}
-      </ul>
+      </List>
       {loading && <p>{loadingMessage}...</p>}
     </div>
   );
