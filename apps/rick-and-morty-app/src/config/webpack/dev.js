@@ -11,7 +11,7 @@ module.exports = merge(commonConfig, {
   plugins: [...plugins],
   devServer: {
     static: path.join(__dirname, "dist"),
-    port: 3003,
+    port: 3002,
     hot: true,
   },
 });

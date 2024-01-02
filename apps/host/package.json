@@ -4,9 +4,9 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production --config webpack.prod.js",
-    "build-dev": "webpack --mode development --config webpack.dev.js",
-    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config ./src/config/webpack/prod.js",
+    "build-dev": "webpack --config ./src/config/webpack/dev.js",
+    "start": "webpack serve --config ./src/config/webpack/dev.js",
     "test": "jest"
   },
   "dependencies": {

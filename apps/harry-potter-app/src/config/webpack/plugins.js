@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const deps = require("../../../package.json").dependencies;
 
-function getPlugins(prod = false) {
+function getPlugins(isProduction = false) {
   return [
     new ModuleFederationPlugin({
       name: "harry_potter",
@@ -15,7 +15,9 @@ function getPlugins(prod = false) {
       When the asset's content changes, [contenthash] will change as well.
 
       */
-      filename: prod ? "remoteEntry.[contenthash].js" : "remoteEntry.js",
+      filename: isProduction
+        ? "remoteEntry.[contenthash].js"
+        : "remoteEntry.js",
       exposes: {
         "./app": "./src/app",
       },
