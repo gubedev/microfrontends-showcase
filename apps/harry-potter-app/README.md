@@ -1,4 +1,4 @@
-# Rick and Morty app
+# Harry Potter app
 
 A simple, microfrontend site for skill demonstration, showcasing the power of modular development and the flexibility it offers in presenting diverse skills and functionalities. Utilizing the webpack module federation approach, this project exemplifies the seamless integration of independent modules, highlighting the efficiency and scalability of microfrontend architecture
 

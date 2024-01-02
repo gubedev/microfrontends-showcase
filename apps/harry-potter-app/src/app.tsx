@@ -26,7 +26,7 @@ export default function App() {
    *
    * @param {CustomEvent} e - Custom event containing the new language.
    */
-  const handleLangHasChanged = (e) => {
+  const handleLangHasChanged = (e: any) => {
     i18n.changeLanguage(e.detail.lang.toLowerCase());
   };
 
